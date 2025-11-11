@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Play rocket game",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "game": "rocket",
+        "userId": 1,
+        "bet": 10
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "game": "rocket",
+        "multiplier": "number",
+        "win": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Start tower game",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "game": "tower",
+        "action": "start",
+        "userId": 1,
+        "bet": 10
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "level": 1
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
